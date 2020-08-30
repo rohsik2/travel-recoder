@@ -22,16 +22,42 @@
             {{travel.title}}
         </h2>
     </div>
+    
+    
     <div class = "col s12 center">
-    <img src="{{travel.image.url}}">
-        
+        <img src="{{travel.image.url}}">
     </div>
+    
+    
     <div class = "col s12 center">
         <p>
             {{travel.description}}
-            
         </p>
     </div>
+    
+    
+    <div class = "col s12 center">
+        {% for day in locations %}
+            <h3>
+                DAY {{ forloop.counter }}
+            </h3>
+            <div class="divider"></div>
+            {% for location in day %}
+            <h5>
+                {{location.title}}    
+            </h5>
+                {% for imag in images %}
+                    {% for image in imag %}
+                    <img src="{{image.images.url}}">
+                    {% endfor %}
+                {% endfor %}
+            <p>
+                {{location.description}}
+            </p>
+            {% endfor %}
+        {% endfor %}
+    </div>
+    
 </div>
 
 

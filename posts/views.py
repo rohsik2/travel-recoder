@@ -10,12 +10,17 @@ def detail_view(request, id):
     travel = get_object_or_404(Travel, id=id)
     days = Day.objects.filter(travel=travel).order_by('-day')
     Locations = []
+    images = []
     for day in days:
         Locations.append(TravelLocation.objects.filter(day=day))
+        for location in Locations[-1]:
+            images.append(TravelLocationImage.objects.filter(TravelLocation=location))
+    print(images)
     return render(request, 'travels/detail.html', {
         'travel':travel,
         'days' : days,
-        'locations':Locations
+        'locations':Locations,
+        'images':images
     })
     
 def detail_day_view(request, id, date):

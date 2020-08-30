@@ -9,7 +9,7 @@
     {% for travel in travels %}
     <div class="col s6 m4 l3">
         <a href="{% url 'detail' travel.id %}">
-        <div class="card hoverable">
+        <div class="card hoverable small">
         <div class="card-image">
           <img src="{{travel.image.url}}">
           <span class="card-title">{{travel.title}}</span>
