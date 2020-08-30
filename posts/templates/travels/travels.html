@@ -1,0 +1,27 @@
+{% extends 'travels/base.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="section">
+    <h5>
+        해외여행
+    </h5>
+    <div class="row">
+    {% for travel in travels %}
+    <div class="col s6 m4 l3">
+        <a href="{% url 'detail' travel.id %}">
+        <div class="card hoverable">
+        <div class="card-image">
+          <img src="{{travel.image.url}}">
+          <span class="card-title">{{travel.title}}</span>
+        </div>
+
+        <div class="card-content">
+          <p>{{travel.description}}</p>
+        </div>
+      </div>
+    </a>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

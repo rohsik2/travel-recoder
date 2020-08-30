@@ -1,0 +1,38 @@
+{% extends 'travels/base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+<div class="row">
+        <nav>
+            <div class="nav-wrapper">
+                <div class="col s12">
+                {% for day in days %}
+                    <a href="{% url 'detail_day' travel.id day.id %}" class="breadcrumb">DAY {{ forloop.counter }}</a>
+                {% endfor %}
+                </div>
+            </div>
+        </nav>
+</div>
+
+<div class = "row">
+    <div class = "col s12 center">
+    
+        <h2>
+            {{travel.title}}
+        </h2>
+    </div>
+    <div class = "col s12 center">
+    <img src="{{travel.image.url}}">
+        
+    </div>
+    <div class = "col s12 center">
+        <p>
+            {{travel.description}}
+            
+        </p>
+    </div>
+</div>
+
+
+{% endblock %}

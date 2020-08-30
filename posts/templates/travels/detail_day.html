@@ -1,0 +1,21 @@
+{% extends 'travels/base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+{% for photos in pictures %}
+<div class="slider">
+    <ul class="slides">
+    {% for photo in photos %}
+      <li>
+        <img src="{{photo.images.url}}"> 
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        </div>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+{% endfor %}
+{% endblock %}
