@@ -9,5 +9,6 @@ urlpatterns = [
     path('', views.travel_view, name='travel'),
     path('<int:id>/', views.detail_view, name='detail'),
     path('<int:id>/<int:date>', views.detail_day_view, name='detail_day'),
-    path('test/',views.test_view, name='test')
+    path('test/',views.test_view, name='test'),
+    path('new/',views.post_new, name='new')
 ]# + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

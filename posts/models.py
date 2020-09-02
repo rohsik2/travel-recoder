@@ -4,7 +4,7 @@ from django.db import models
 class Travel(models.Model):
     title = models.CharField(max_length=250)
     description = models.TextField()
-    image = models.FileField(blank=True)
+    image = models.FileField(blank=False)
     start_date = models.DateField()
     end_date = models.DateField()
     
