@@ -10,10 +10,6 @@ class TravelAdmin(admin.ModelAdmin):
     class Meta:
        model = Travel
 
-@admin.register(Day)
-class DayAdmin(admin.ModelAdmin):
-    class Meta:
-       model = Day
 
 @admin.register(TravelLocation)
 class TravelLocationAdmin(admin.ModelAdmin):

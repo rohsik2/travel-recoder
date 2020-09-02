@@ -13,7 +13,7 @@
 {% endblock %}
 
 {% block content %}
-<h3>전파사항 추가</h3>
+<h3>새로운 여행기록 추가</h3>
 	<form method="POST" class="post-form" enctype="multipart/form-data">{% csrf_token %}
 		{{ form.as_p }}
 		<button type="submit" class="save btn btn-default">Save</button>

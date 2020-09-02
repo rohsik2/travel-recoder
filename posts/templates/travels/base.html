@@ -17,13 +17,19 @@
     <body>
         <nav class="white" role="navigation">
         <div class="nav-wrapper container">
-          <a id="logo-container" href="{% url 'travel' %}" class="brand-logo">TripToGo</a>
+          <a id="logo-container" href="{% url 'travel_view' %}" class="brand-logo">TripToGo</a>
           <ul class="right hide-on-med-and-down">
-            <li><a href="#">Navbar Link</a></li>
+            <li><a href = "{% url 'travel_view' %}" class="active">travel</a></li>
+            <li><a href = "{% url 'new_view' %}" >new</a></li>
+            <li><a href = "#" > What We Do</a></li>
+            <li><a href = "#" > Contact Us</a></li>
           </ul>
 
           <ul id="nav-mobile" class="sidenav">
-            <li><a href="#">Navbar Link</a></li>
+            <li><a href = "{% url 'travel_view' %}" class="active">travel</a></li>
+            <li><a href = "{% url 'new_view' %}" >new</a></li>
+            <li><a href = "#" > What We Do</a></li>
+            <li><a href = "#" > Contact Us</a></li>
           </ul>
           <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
@@ -34,11 +40,10 @@
         {% endblock %}
         </div>
 
-        <div class="container">
         <footer class="page-footer">
           <div class="container">
             <div class="row">
-              <div class="col l6 s12">
+              <div class="col s12">
                 <h5 class="white-text">Made By HyunUk</h5>
                 <p class="grey-text text-lighten-4">주말 갈갈갈해서 만들었습니다. 대략 8시간은 작업한듯... 일욜하루만... 허리야..</p>
               </div>
@@ -52,8 +57,16 @@
             </div>
           </div>
         </footer>
-        </div>
+
+        
+        <script type="text/javascript" src="{% static 'js/materialize.min.js'%}"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>         
+        <script type="text/javascript" src="{% static 'js/materialize.js'%}"></script>
+        <script>
+        $(document).ready(function(){
+            $('.sidenav').sidenav();
+          });
+        </script>
       <!--JavaScript at end of body for optimized loading-->
-    
     </body>
   </html>
