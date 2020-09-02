@@ -11,7 +11,7 @@ def post_new(request):
            trip.start_date = form.cleaned_data['start_date']
            trip.end_date = form.cleaned_data['end_date']
            trip.save()
-           return redirect('detail',id=trip.pk)
+           return redirect('detail_view',id=trip.pk)
     else:
         form = TravelForm()
     return render(request, 'travels/new_travel.html', {'form': form})
@@ -30,7 +30,7 @@ def detail_view(request, id):
             loc = form.save(commit=False)
             loc.travel = get_object_or_404(Travel, id=id)
             loc.save()
-            return redirect('detail', id=loc.travel.pk)
+            return redirect('detail_view', id=loc.travel.pk)
     else:
         form = LocationForm()
     travel = get_object_or_404(Travel, id=id)
