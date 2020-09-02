@@ -2,6 +2,9 @@ from django.shortcuts import render, get_object_or_404
 
 from .models import *
 
+def test_view(request):
+    return render(request,'travels/test.html')
+
 def travel_view(request):
     travels = Travel.objects.all()
     return render(request, 'travels/travels.html', {'travels':travels})
@@ -15,7 +18,6 @@ def detail_view(request, id):
         Locations.append(TravelLocation.objects.filter(day=day))
         for location in Locations[-1]:
             images.append(TravelLocationImage.objects.filter(TravelLocation=location))
-    print(images)
     return render(request, 'travels/detail.html', {
         'travel':travel,
         'days' : days,
