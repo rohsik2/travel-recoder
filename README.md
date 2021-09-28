@@ -7,3 +7,6 @@ Django Girls totorial 을 완료한 이후 저만의 웹사이트를 만들어 �
 
 ## 사용기술
 Django, Materialize, Javascript를 이용해 구현했습니다.
+
+## Hosting at
+http://rohsikdak.pythonanywhere.com/?
